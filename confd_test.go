@@ -236,7 +236,7 @@ func writeConfdDir(t *testing.T, tmplBody, toml string) (root, dest string) {
 	if err := os.WriteFile(filepath.Join(tmplDir, "r.tmpl"), []byte(tmplBody), 0o644); err != nil {
 		t.Fatal(err)
 	}
-	full := "[template]\nsrc = \"r.tmpl\"\ndest = \"" + dest + "\"\nmode = \"0644\"\n" + toml
+	full := "[template]\nsrc = \"r.tmpl\"\ndest = " + tomlQuote(dest) + "\nmode = \"0644\"\n" + toml
 	if err := os.WriteFile(filepath.Join(confDir, "r.toml"), []byte(full), 0o644); err != nil {
 		t.Fatal(err)
 	}
