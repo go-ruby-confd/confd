@@ -1,6 +1,6 @@
 module github.com/go-ruby-confd/confd
 
-go 1.26
+go 1.26.4
 
 require github.com/abtreece/confd v0.41.2
 
